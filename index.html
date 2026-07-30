@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .star-rating{
+            font-size: 30px;
+            color:gold;
+        }
+    </style>
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Movie Ticket Booking - Home</title>
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <img src="C:\Users\chenn\OneDrive\รูปภาพ\Screenshots\Screenshot 2024-11-02 150853.png" alt="Movie Ticket Booking Logo" />
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="movies.html">Movies</a></li>
+                <li><a href="booking.html">Booking</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="profile.html">Profile</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+
+        <!-- Search Bar -->
+        <div class="search-container">
+            <input type="text" id="movie-search" placeholder="Search for a movie...">
+        </div>
+    </header>
+
+    <!-- Main Banner -->
+    <section class="banner">
+        <div class="carousel">
+            <div class="carousel-item">
+                <img src="images/movie1.jpg" alt="Movie Title 1">
+                <button class="play-button" data-video="videos/pushpa2_trailer">▶</button>
+            </div>
+            <div class="carousel-item">
+                <img src="images/movie2.jpg" alt="Movie Title 2">
+                <button class="play-button" data-video="https://youtu.be/wboGYls1Bns?si=fnxp1T3teCe6GhV9">▶</button>
+            </div>
+            <div class="carousel-item">
+                <img src="images/prabhas.jpg" alt="Movie Title 3">
+                <button class="play-button" data-video="https://youtu.be/wboGYls1Bns?si=fnxp1T3teCe6GhV9">▶</button>
+            </div>
+            <div class="carousel-item">
+                <img src="images/kanguva_trailer1.avif" alt="Movie Title 4">
+                <button class="play-button" data-video="https://youtu.be/wboGYls1Bns?si=fnxp1T3teCe6GhV9">▶</button>
+            </div>
+            <!-- Additional carousel items can be added here -->
+        </div>
+    </section>
+
+    <!-- Modal for Video -->
+    <div id="videoModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <iframe id="videoFrame" width="560" height="315" src="" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </div>
+
+
+
+    <!-- Filters Section -->
+    <section class="filters">
+        <h2>Filter Movies</h2>
+        <div class="filter-container">
+
+
+            <!-- Language Filter Dropdown -->
+            <div class="filter-section">
+                <h3>Language</h3>
+                <select id="language-select">
+                    <option value="">All Languages</option>
+                    <option value="english">English</option>
+                    <option value="hindi">Hindi</option>
+                    <option value="telugu">Telugu</option>
+                    <option value="tamil">Tamil</option>
+                    <option value="kannada">Kannada</option>
+                </select>
+            </div>
+
+            <!-- Genre Filter Dropdown -->
+            <div class="filter-section">
+                <h3>Genre</h3>
+                <select id="genre-select">
+                    <option value="">All Genres</option>
+                    <option value="drama">Drama</option>
+                    <option value="comedy">Comedy</option>
+                    <option value="romance">Romance</option>
+                    <option value="family">Family</option>
+                    <option value="horror">Horror</option>
+                    <option value="webseries">Web Series</option>
+                    <option value="sports">Sports</option>
+                    <option value="emotional">Emotional</option>
+                </select>
+            </div>
+
+            <!-- Apply Button -->
+            <button class="apply-filter">Apply Filters</button>
+        </div>
+    </section>
+
+    <!-- Now Showing Section -->
+    <section class="now-showing">
+        <h2>Now Showing</h2>
+        <div class="movie-list">
+            <div class="movie-card" data-title="Pushpa 2" data-language="Telugu" data-genre="Action">
+                <img src="images/avatar.jpg" alt="Pushpa 2">
+                <div class="movie-info">
+                    <h3>Pushpa 2</h3>
+                    <div class="star-rating">&#9733; &#9733; &#9733; &#9733;</div>
+                    <a href="booking.html" class="btn">Book Now</a>
+                </div>
+            </div>
+            <div class="movie-card" data-title="Game Changer" data-language="Telugu" data-genre="Action">
+                <img src="images/Game Changer.jpg" alt="Game Changer">
+                <div class="movie-info">
+                    <h3>Game Changer</h3>
+                    <div class="star-rating">&#9733; &#9733; &#9733; &#9733;</div>
+                    <a href="booking.html" class="btn">Book Now</a>
+                </div>
+            </div>
+            <div class="movie-card" data-title="Rajasaab" data-language="Telugu" data-genre="Drama">
+                <img src="images/movie3.jpg" alt="Rajasaab">
+                <div class="movie-info">
+                    <h3>Rajasaab</h3>
+                    <div class="star-rating">&#9733; &#9733; &#9733; &#9733;</div>
+                    <a href="booking.html" class="btn">Book Now</a>
+                </div>
+            </div>
+            <div class="movie-card" data-title="Mechanic Rocky" data-language="English" data-genre="Action">
+                <img src="images/mechanic rocky.avif" alt="Mechanic Rocky">
+                <div class="movie-info">
+                    <h3>Mechanic Rocky</h3>
+                    <div class="star-rating">&#9733; &#9733; &#9733; &#9733;</div>
+                    <a href="booking.html" class="btn">Book Now</a>
+                </div>
+            </div>
+            <div class="movie-card" data-title="Titanic" data-language="English" data-genre="Romance">
+                <img src="images/titanic.avif" alt="Titanic">
+                <div class="movie-info">
+                    <h3>Titanic</h3>
+                    <div class="star-rating">&#9733; &#9733; &#9733; &#9733;</div>
+                    <a href="booking.html" class="btn">Book Now</a>
+                </div>
+            </div>
+            <div class="movie-card" data-title="Ustaad Bhagat Singh" data-language="Telugu" data-genre="Action">
+                <img src="images/ustaad bhagat singh.avif" alt="Ustaad Bhagat Singh">
+                <div class="movie-info">
+                    <h3>Ustaad Bhagat Singh</h3>
+                    <div class="star-rating">&#9733; &#9733; &#9733; &#9733;</div>
+                    <a href="booking.html" class="btn">Book Now</a>
+                </div>
+            </div>
+        </div>
+        <!-- Add more movie cards as needed -->
+    </section>
+
+
+
+
+    <!-- Upcoming Movies Section -->
+    <section class="upcoming-movies">
+        <h2>Upcoming Movies</h2>
+        <div class="upcoming-list">
+            <div class="upcoming-card" data-title="Pushpa 2" data-language="Telugu" data-genre="Action">
+                <img src="images/pushpa2.webp" alt="Pushpa 2">
+                <h3>Pushpa 2</h3>
+                <p>Release Date: January 15, 2025</p>
+            </div>
+            <div class="upcoming-card" data-title="Game Changer" data-language="Telugu" data-genre="Action">
+                <img src="images/Game Changer.jpg" alt="Game Changer">
+                <h3>Game Changer</h3>
+                <p>Release Date: February 20, 2025</p>
+            </div>
+            <div class="upcoming-card" data-title="Rajasaab" data-language="Telugu" data-genre="Drama">
+                <img src="images/movie3.jpg" alt="Rajasaab">
+                <h3>Rajasaab</h3>
+                <p>Release Date: March 25, 2025</p>
+            </div>
+            <div class="upcoming-card" data-title="Titanic Re-release" data-language="English" data-genre="Romance">
+                <img src="images/titanic.avif" alt="Titanic Re-release">
+                <h3>Titanic Re-release</h3>
+                <p>Release Date: April 30, 2025</p>
+            </div>
+            <div class="upcoming-card" data-title="Mechanic Rocky" data-language="English" data-genre="Action">
+                <img src="images/mechanic rocky.avif" alt="Mechanic Rocky">
+                <h3>Mechanic Rocky</h3>
+                <p>Release Date: May 15, 2025</p>
+            </div>
+            <div class="upcoming-card" data-title="Dhoom Dham" data-language="Telugu" data-genre="Action">
+                <img src="images/dhoom dham.jpg" alt="Dhoom Dham">
+                <h3>Dhoom Dham</h3>
+                <p>Release Date: June 10, 2025</p>
+            </div>
+            <div class="upcoming-card" data-title="Venom: Let There Be Carnage" data-language="English"
+                data-genre="Action">
+                <img src="images/venom.png" alt="Venom: Let There Be Carnage">
+                <h3>Venom: Let There Be Carnage</h3>
+                <p>Release Date: July 20, 2025</p>
+            </div>
+            <div class="upcoming-card" data-title="Game Changer" data-language="Telugu" data-genre="Drama">
+                <img src="images/Game Changer.jpg" alt="Game Changer">
+                <h3>Game Changer</h3>
+                <p>Release Date: February 20, 2025</p>
+            </div>
+            <div class="upcoming-card" data-title="Rajasaab" data-language="Telugu" data-genre="Drama">
+                <img src="images/movie3.jpg" alt="Rajasaab">
+                <h3>Rajasaab</h3>
+                <p>Release Date: March 25, 2025</p>
+            </div>
+            <div class="upcoming-card" data-title="Titanic Re-release" data-language="English" data-genre="Romance">
+                <img src="images/titanic.avif" alt="Titanic Re-release">
+                <h3>Titanic Re-release</h3>
+                <p>Release Date: April 30, 2025</p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Trailer Videos Section -->
+    <section class="trailer-videos">
+        <h2>Movie Trailers</h2>
+        <div class="trailer-navigation">
+            <button class="nav-btn" id="prevBtn">&#10094;</button>
+            <button class="nav-btn" id="nextBtn">&#10095;</button>
+        </div>
+        <div class="trailer-container" id="trailerContainer">
+            <div class="trailer-item">
+                <div class="card">
+                    <img src="images/movie1.jpg" alt="Movie Title 1" class="trailer-image"
+                        data-video="C:\Projects\movie-ticket-booking-website\videos\pushpa2_trailer.mp4">
+                    <div class="trailer-title">Movie Title 1</div>
+                </div>
+            </div>
+            <div class="trailer-item">
+                <div class="card">
+                    <img src="images/movie2.jpg" alt="Movie Title 2" class="trailer-image"
+                        data-video="path_to_video2.mp4">
+                    <div class="trailer-title">Movie Title 2</div>
+                </div>
+            </div>
+            <div class="trailer-item">
+                <div class="card">
+                    <img src="images/prabhas.jpg" alt="Movie Title 3" class="trailer-image"
+                        data-video="path_to_video3.mp4">
+                    <div class="trailer-title">Movie Title 3</div>
+                </div>
+            </div>
+            <div class="trailer-item">
+                <div class="card">
+                    <img src="images/movie1.jpg" alt="Movie Title 4" class="trailer-image"
+                        data-video="path_to_video4.mp4">
+                    <div class="trailer-title">Movie Title 4</div>
+                </div>
+            </div>
+            <div class="trailer-item">
+                <div class="card">
+                    <img src="images/movie2.jpg" alt="Movie Title 5" class="trailer-image"
+                        data-video="path_to_video5.mp4">
+                    <div class="trailer-title">Movie Title 5</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Modal for video playback -->
+    <div id="videoModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <video id="videoPlayer" controls>
+                <source id="videoSource" src="" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+
+
+    <section class="promotions">
+        <h2>Special Offers</h2>
+        <div class="offer-cards">
+            <div class="offer-card" data-title="Federal Bank Celesta Credit Card 1+1" data-valid="Wed, Dec 31, 2025"
+                data-terms="Enjoy a 1+1 offer on movie tickets with your Federal Bank Celesta Credit Card. Limited to one free ticket per transaction. Terms apply.">
+                <img src="offers/offer1.jpg" alt="Offer 1">
+                <h3>Federal Bank Celesta Credit Card 1+1</h3>
+                <p>Valid till: Wed, Dec 31, 2025</p>
+                <button class="view-offer">View</button>
+            </div>
+            <div class="offer-card" data-title="DBS Bank Credit & Debit Card - Buy 1 Get 1"
+                data-valid="Thu, Oct 31, 2024"
+                data-terms="Get a Buy 1 Get 1 offer on selected items with DBS Bank Credit & Debit Cards. Valid on weekends only. Terms apply.">
+                <img src="offers/offer2.webp" alt="Offer 2">
+                <h3>DBS Bank Credit & Debit Card - Buy 1 Get 1</h3>
+                <p>Valid till: Thu, Oct 31, 2024</p>
+                <button class="view-offer">View</button>
+            </div>
+            <div class="offer-card" data-title="Kotak PVR INOX Credit Card 20% Off on F & B"
+                data-valid="Mon, Mar 31, 2025"
+                data-terms="Get 20% off on food and beverages at PVR INOX with your Kotak Credit Card. Maximum discount of ₹200 per transaction. Terms apply.">
+                <img src="offers/offer3.webp" alt="Offer 3">
+                <h3>Kotak PVR INOX Credit Card 20% Off on F & B</h3>
+                <p>Valid till: Mon, Mar 31, 2025</p>
+                <button class="view-offer">View</button>
+            </div>
+            <div class="offer-card" data-title="MobiKwik UPI offer" data-valid="Thu, Oct 31, 2024"
+                data-terms="Enjoy a cashback of up to ₹50 on UPI transactions using MobiKwik. Minimum spend of ₹200 required. Terms apply.">
+                <img src="offers/offer4.avif" alt="Offer 4">
+                <h3>MobiKwik UPI offer</h3>
+                <p>Valid till: Thu, Oct 31, 2024</p>
+                <button class="view-offer">View</button>
+            </div>
+            <div class="offer-card" data-title="HDFC Bank Festive Offer - Extra Cashback" data-valid="Fri, Dec 15, 2024"
+                data-terms="Get an extra 10% cashback on shopping during the festive season with HDFC Bank Credit Cards. Maximum cashback of ₹500. Terms apply.">
+                <img src="offers/offer5.avif" alt="Offer 5">
+                <h3>HDFC Bank Festive Offer - Extra Cashback</h3>
+                <p>Valid till: Fri, Dec 15, 2024</p>
+                <button class="view-offer">View</button>
+            </div>
+            <div class="offer-card" data-title="SBI Card - Get 15% Instant Discount" data-valid="Tue, Jan 31, 2025"
+                data-terms="Avail a 15% instant discount on selected stores with SBI Credit Cards. Minimum purchase of ₹1,000 required. Terms apply.">
+                <img src="offers/offer6.avif" alt="Offer 6">
+                <h3>SBI Card - Get 15% Instant Discount</h3>
+                <p>Valid till: Tue, Jan 31, 2025</p>
+                <button class="view-offer">View</button>
+            </div>
+            <div class="offer-card" data-title="Axis Bank Credit Card - Free Movie Tickets"
+                data-valid="Sun, Feb 28, 2025"
+                data-terms="Get a free movie ticket with every purchase of ₹500 or more using Axis Bank Credit Card. Limited to one ticket per month. Terms apply.">
+                <img src="offers/offer7.avif" alt="Offer 7">
+                <h3>Axis Bank Credit Card - Free Movie Tickets</h3>
+                <p>Valid till: Sun, Feb 28, 2025</p>
+                <button class="view-offer">View</button>
+            </div>
+            <div class="offer-card" data-title="ICICI Bank Instant Cashback Offer" data-valid="Sat, Nov 30, 2024"
+                data-terms="Instant cashback of 5% on all purchases over ₹2,000 with ICICI Bank Credit Card. Maximum cashback ₹200. Terms apply.">
+                <img src="offers/offer8.avif" alt="Offer 8">
+                <h3>ICICI Bank Instant Cashback Offer</h3>
+                <p>Valid till: Sat, Nov 30, 2024</p>
+                <button class="view-offer">View</button>
+            </div>
+            <div class="offer-card" data-title="ICICI Bank Instant Cashback Offer" data-valid="Sat, Nov 30, 2024"
+                data-terms="Instant cashback of 5% on all purchases over ₹2,000 with ICICI Bank Credit Card. Maximum cashback ₹200. Terms apply.">
+                <img src="offers/offer9.avif" alt="Offer 9">
+                <h3>ICICI Bank Instant Cashback Offer</h3>
+                <p>Valid till: Sat, Nov 30, 2024</p>
+                <button class="view-offer">View</button>
+            </div>
+        </div>
+        <div class="see-all">
+            <button class="see-all-button">See All Offers</button>
+        </div>
+    </section>
+
+    <!-- Popup Modal -->
+    <div class="popup-modal" id="offerPopup">
+        <div class="popup-content">
+            <span class="close-btn" onclick="closePopup()">&times;</span>
+            <h3 id="popup-title"></h3>
+            <img id="popup-image" src="" alt="Offer Image">
+            <p id="popup-valid"></p>
+            <p id="popup-terms"></p>
+        </div>
+    </div>
+
+    <!-- Modal for No Results -->
+    <div id="no-results-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h3>🎬 Oops! Movie Not Found! 🎬</h3>
+            <p>Looks like the movie you’re hunting for has gone on a vacation!</p>
+            <p>Don't worry; we have plenty of other options to tickle your fancy!</p>
+            <p>Our team is currently searching the universe for this movie. 🚀</p>
+            <p>In the meantime, why not try one of these genres:</p>
+            <ul>
+                <li>🦸‍♂️ Action: For when you feel like a superhero!</li>
+                <li>😂 Comedy: Because laughter is the best medicine!</li>
+                <li>💔 Drama: For those moments when you want to cry a little!</li>
+                <li>💕 Romance: Because who doesn’t love a good love story?</li>
+            </ul>
+            <p>Our dedicated team is currently searching the universe to add this movie for you! 🚀</p>
+            <div class="image-container">
+                <img src="images/mypic.jpg" alt="Action Genre" class="rounded-image">
+                <img src="images/mypic.jpg" alt="Comedy Genre" class="rounded-image">
+
+                <img src="images//mypic.jpg" alt="Romance Genre" class="rounded-image">
+            </div>
+            <p>Go ahead, explore our collection—who knows, you might find your new favorite flick!</p>
+        </div>
+    </div>
+
+
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-links">
+            <a href="about.html">About Us</a>
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="terms.html">Terms of Service</a>
+        </div>
+        <div class="social-media">
+            <a href="#"><img src="images/facebook-icon.png" alt="Facebook"></a>
+            <a href="#"><img src="images/twitter-icon.png" alt="Twitter"></a>
+            <a href="#"><img src="images/instagram-icon.png" alt="Instagram"></a>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>

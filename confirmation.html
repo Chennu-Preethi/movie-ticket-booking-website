@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Confirmation</title>
+    <link rel="stylesheet" href="css/confirmation.css">
+</head>
+
+<body>
+
+    <div class="confirmation-container">
+        <h1>Payment Confirmation</h1>
+        <div id="paymentDetails"></div>
+        <button onclick="goBack()">Go Back to Payment</button>
+    </div>
+
+    <script>
+        function getQueryParams() {
+            const params = {};
+            const queryString = window.location.search.substring(1);
+            const regex = /([^&=]+)=([^&]*)/g;
+            let m;
+
+            while (m = regex.exec(queryString)) {
+                params[decodeURIComponent(m[1])] = decodeURIComponent(m[2]);
+            }
+            return params;
+        }
+
+        function displayPaymentDetails() {
+            const params = getQueryParams();
+            const paymentDetails = `
+                <p><strong>Name:</strong> ${params.username}</p>
+                <p><strong>UPI ID:</strong> ${params.upiId}</p>
+                <p><strong>Card Number:</strong> ${params.cardNumber}</p>
+                <p><strong>Expiry Date:</strong> ${params.expiryDate}</p>
+                <p><strong>CVV:</strong> ${params.cvv}</p>
+                <p><strong>Amount:</strong> ${params.amount}</p>
+            `;
+            document.getElementById('paymentDetails').innerHTML = paymentDetails;
+        }
+
+        function goBack() {
+            window.history.back(); // Go back to the previous page
+        }
+
+        // Display payment details on page load
+        window.onload = displayPaymentDetails;
+    </script>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+
+        .confirmation-container {
+            max-width: 400px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</body>
+
+</html>

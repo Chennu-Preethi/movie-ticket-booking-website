@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile - Movie Ticket Booking</title>
+    <link rel="stylesheet" href="css/profile.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>Movie Ticket Booking</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="profile.html" class="active">Profile</a>
+            <a href="booking.html">My Bookings</a>
+            <a href="logout.html">Logout</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="profile-info">
+            <h2>User Profile</h2>
+            <div class="profile-details">
+                <img src="C:\Users\chenn\OneDrive\รูปภาพ\Screenshots\Screenshot 2024-11-02 150853.png" alt="User Avatar" class="avatar">
+                <div class="details">
+                    <p><strong>Name:</strong> <span id="userName">LEO TEAM</span></p>
+                    <p><strong>Email:</strong> <span id="userEmail">leoteam123@gmail.com</span></p>
+                    <p><strong>Phone:</strong> <span id="userPhone">+91 12345 67890</span></p>
+                    <button onclick="openEditModal()">Edit Profile</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="booking-history">
+            <h2>Booking History</h2>
+            <table id="bookingHistory">
+                <thead>
+                    <tr>
+                        <th>Movie</th>
+                        <th>Date</th>
+                        <th>Time</th>
+                        <th>Seats</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Interstellar</td>
+                        <td>2024-10-15</td>
+                        <td>7:00 PM</td>
+                        <td>A1, A2</td>
+                        <td class="confirmed">Confirmed</td>
+                    </tr>
+                    <tr>
+                        <td>Inception</td>
+                        <td>2024-10-20</td>
+                        <td>6:30 PM</td>
+                        <td>B3, B4</td>
+                        <td class="cancelled">Cancelled</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="account-settings">
+            <h2>Account Settings</h2>
+            <button onclick="openChangePasswordModal()">Change Password</button>
+            <button onclick="confirmDeleteAccount()" class="delete">Delete Account</button>
+        </section>
+    </main>
+
+    <!-- Edit Profile Modal -->
+    <div id="editModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('editModal')">&times;</span>
+            <h3>Edit Profile</h3>
+            <label for="editName">Name:</label>
+            <input type="text" id="editName" placeholder="Enter new name">
+            <label for="editPhone">Phone:</label>
+            <input type="text" id="editPhone" placeholder="Enter new phone number">
+            <button onclick="saveProfile()">Save</button>
+        </div>
+    </div>
+
+    <!-- Change Password Modal -->
+    <div id="changePasswordModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('changePasswordModal')">&times;</span>
+            <h3>Change Password</h3>
+            <label for="currentPassword">Current Password:</label>
+            <input type="password" id="currentPassword" placeholder="Enter current password">
+            <label for="newPassword">New Password:</label>
+            <input type="password" id="newPassword" placeholder="Enter new password">
+            <button onclick="saveNewPassword()">Update Password</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Movie Ticket Booking. All rights reserved.</p>
+    </footer>
+
+    <script src="js/profile.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,190 @@
+/* Header Styles */
+header {
+    background: linear-gradient(135deg, #4b79a1, #283e51);
+    color: #ffffff;
+    padding: 20px 0;
+    text-align: center;
+    border-bottom: 2px solid #1c2833;
+}
+
+header h1 {
+    font-size: 26px;
+    font-weight: bold;
+    color: #ffffff;
+    margin: 0;
+    text-shadow: 1px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Navigation Bar Styles */
+nav {
+    margin-top: 15px;
+}
+
+nav a {
+    display: inline-block;
+    color: #ffffff;
+    background-color: #3d5a80;
+    margin: 0 10px;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+nav a:hover {
+    background-color: #98c1d9;
+    color: #ffffff;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+nav a.active {
+    background-color: #1d3557;
+    color: #ffffff;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+
+main {
+    width: 80%;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    font-size: 22px;
+    margin-bottom: 20px;
+    color: #444;
+    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: 8px;
+}
+
+.profile-info,
+.booking-history,
+.account-settings {
+    margin-bottom: 30px;
+}
+
+.profile-details {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.profile-details img.avatar {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    border: 3px solid #eee;
+}
+
+.profile-details .details p {
+    margin: 10px 0;
+}
+
+/* Updated button styles */
+button {
+    padding: 8px 15px;
+    border-radius: 5px;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    background-color: #3498db;
+    /* New color for all buttons except delete */
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+button.delete {
+    background-color: #e74c3c;
+    /* Keep delete button color red */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+table th,
+table td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+}
+
+.confirmed {
+    color: #2ecc71;
+    font-weight: bold;
+}
+
+.cancelled {
+    color: #e74c3c;
+    font-weight: bold;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+}
+
+.modal-content {
+    background-color: #ffffff;
+    width: 90%;
+    max-width: 500px;
+    margin: 5% auto;
+    padding: 20px;
+    border-radius: 10px;
+    position: relative;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+.modal-content h3 {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.modal-content label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.modal-content input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 20px;
+    color: #aaa;
+    cursor: pointer;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    color: #999;
+    font-size: 14px;
+}

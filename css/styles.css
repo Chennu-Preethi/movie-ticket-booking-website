@@ -1,0 +1,912 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #007BFF;
+    color: white;
+}
+
+.logo img {
+    width: 50px;
+    /* Adjust size as needed */
+    height: 50px;
+    /* Same as width for a circle */
+    border-radius: 50%;
+    /* Makes the image circular */
+    object-fit: cover;
+    /* Ensures the image fills the circle */
+    object-position: top;
+    /* Centers the image within the circle */
+}
+
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.search-bar {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+.filters {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    margin: 20px;
+    border-radius: 8px;
+}
+
+.filter-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.filter-section {
+    flex: 1;
+    min-width: 200px;
+    /* Minimum width for smaller screens */
+    margin-right: 20px;
+    /* Space between filter sections */
+}
+
+.filter-section h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em;
+    outline: none;
+}
+
+.apply-filter {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+.apply-filter:hover {
+    background-color: #0056b3;
+    /* Darker shade on hover */
+}
+
+
+/* Carousel styling */
+.carousel {
+    display: flex;
+    overflow: hidden;
+    width: 100%;
+    max-width: 1500px;
+    height: 600px;
+    position: relative;
+    margin: 0 auto;
+    margin-top: 50px;
+}
+
+.carousel-item {
+    min-width: 100%;
+    height: 100%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.carousel-item.active {
+    opacity: 1;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+/* Play Button */
+.play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 0, 0, 0.7);
+    /* Red color for visibility */
+    color: white;
+    border: none;
+    border-radius: 50%;
+    /* Makes the button circular */
+    padding: 15px;
+    /* Increased padding for a larger button */
+    font-size: 24px;
+    cursor: pointer;
+    opacity: 0;
+    /* Initially hidden */
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    /* Added transform transition */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    /* Shadow for depth */
+}
+
+.carousel-item:hover .play-button {
+    opacity: 1;
+    /* Show on hover */
+    transform: translate(-50%, -50%) scale(1.1);
+    /* Slightly scale up on hover */
+}
+
+
+/* Carousel caption styling */
+.carousel-caption {
+    position: absolute;
+    bottom: 15px;
+    left: 20px;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.carousel-caption h3 {
+    margin: 0;
+    font-size: 1.2em;
+}
+
+.carousel-caption p {
+    margin: 5px 0;
+    font-size: 0.9em;
+}
+
+/* Modal styles (unchanged) */
+.modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1000;
+    /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.8);
+    /* Black with transparency */
+}
+
+.modal-content {
+    position: relative;
+    margin: auto;
+    padding: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#videoFrame {
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    border: none;
+    /* No border */
+}
+
+
+/* Now Showing Section */
+.now-showing,
+.upcoming-movies {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    margin: 20px;
+}
+
+.movie-list,
+.upcoming-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.movie-card,
+.upcoming-card {
+    background-color: #f4f4f4;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px;
+    width: 250px;
+    text-align: center;
+}
+
+.movie-card img,
+.upcoming-card img {
+    width: 100%;
+    height: auto;
+}
+
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.footer-links {
+    margin-bottom: 20px;
+}
+
+.footer-links a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+.social-media img {
+    width: 30px;
+    margin: 0 10px;
+}
+
+.offer-cards {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.offer-card {
+    flex: 1 1 30%;
+    /* Flexbox allows responsive cards */
+    margin: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    text-align: center;
+    background-color: #fff;
+    /* Card background */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Add subtle shadow */
+    transition: transform 0.3s ease;
+    /* Hover effect */
+}
+
+.offer-card:hover {
+    transform: scale(1.05);
+    /* Scale up slightly on hover */
+}
+
+.offer-card img {
+    width: 100%;
+    /* Full width for responsive images */
+    height: auto;
+    border-bottom: 1px solid #ddd;
+}
+
+.offer-card-content {
+    padding: 15px;
+}
+
+.offer-card-title {
+    font-size: 1.2em;
+    margin: 10px 0;
+    color: #333;
+}
+
+.offer-card-description {
+    font-size: 0.95em;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.offer-card .btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    color: #fff;
+    background-color: #ff6600;
+    /* Button color */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.offer-card .btn:hover {
+    background-color: #e55a00;
+    /* Darker shade for hover effect */
+}
+
+.trailer-videos {
+    padding: 20px;
+    background-color: #f8f8f8;
+    /* Light background color */
+    position: relative;
+    /* Allow positioning of navigation buttons */
+}
+
+.trailer-videos h2 {
+    text-align: left;
+    /* Align title to the left */
+    margin-bottom: 20px;
+    /* Space below the title */
+}
+
+.trailer-navigation {
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    top: 50%;
+    /* Center vertically */
+    transform: translateY(-50%);
+    /* Adjusts for perfect centering */
+    width: calc(100% - 40px);
+    /* Adjusts for button width */
+    margin: 0 auto;
+    z-index: 1;
+    /* Ensure buttons are above other content */
+}
+
+
+.nav-btn {
+    background-color: rgba(255, 255, 255, 0.8);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 24px;
+    padding: 10px;
+    transition: background-color 0.3s;
+}
+
+.nav-btn:hover {
+    background-color: rgba(255, 255, 255, 1);
+}
+
+/* Hide the scrollbar for the trailer container */
+.trailer-container {
+    display: flex;
+    flex-wrap: nowrap;
+    /* No wrapping, so items stay in a single line */
+    gap: 20px;
+    /* Space between items */
+    justify-content: flex-start;
+    /* Start alignment for scroll */
+    overflow-x: auto;
+    /* Allows horizontal scrolling */
+    scroll-behavior: smooth;
+    /* Smooth scrolling */
+    padding: 10px 0;
+    /* Padding for visual space */
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+.trailer-container::-webkit-scrollbar {
+    display: none;
+    /* Chrome, Safari and Opera */
+}
+
+
+.trailer-item {
+    flex: 0 0 350px;
+    /* Fixed width for each trailer item */
+}
+
+.card {
+    border: 1px solid #ccc;
+    /* Border for the card */
+    border-radius: 10px;
+    /* Rounded corners */
+    overflow: hidden;
+    /* Clip overflow content */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    /* Shadow effect */
+    text-align: center;
+    /* Center text */
+    cursor: pointer;
+    /* Pointer cursor on hover */
+    transition: transform 0.2s;
+    /* Smooth scaling effect */
+}
+
+.card:hover {
+    transform: scale(1.05);
+    /* Scale up on hover */
+}
+
+.trailer-image {
+    width: 100%;
+    /* Full width of the card */
+    height: 200px;
+    /* Fixed height for the image */
+    object-fit: cover;
+    /* Ensures the full image is displayed without cropping */
+    border-radius: 10px;
+    /* Rounded corners for the image */
+}
+
+.trailer-title {
+    padding: 10px;
+    /* Space for the title */
+    font-size: 1.1em;
+    /* Font size for the title */
+    font-weight: bold;
+    /* Bold title */
+}
+
+
+/* Modal styles */
+.modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1000;
+    /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.7);
+    /* Black w/ opacity */
+}
+
+.modal-content {
+    position: relative;
+    margin: auto;
+    padding: 0;
+    top: 50%;
+    /* Center vertically */
+    transform: translateY(-50%);
+    /* Adjust for centering */
+    max-width: 800px;
+    /* Max width of video */
+    width: 100%;
+    /* Responsive */
+}
+
+.close {
+    color: white;
+    /* Close button color */
+    float: right;
+    /* Align to the right */
+    font-size: 28px;
+    /* Font size */
+    font-weight: bold;
+    /* Bold font */
+    cursor: pointer;
+    /* Pointer cursor on hover */
+}
+
+video {
+    width: 100%;
+    /* Full width */
+    border-radius: 10px;
+    /* Rounded corners */
+}
+
+
+/* Promotions Section */
+.promotions {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    margin: 20px;
+    text-align: left;
+}
+
+.offers-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 20px;
+}
+
+.offer-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+}
+
+.offer-card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.offer-card h3 {
+    margin-bottom: 5px;
+}
+
+.offer-card p {
+    margin-bottom: 10px;
+}
+
+.offer-card button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.pagination button {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.pagination button:hover {
+    background-color: #f5f5f5;
+}
+
+.pagination button.active {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.see-all {
+    text-align: center;
+    margin-top: 20px;
+    /* Adjust spacing as needed */
+}
+
+.see-all-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007bff;
+    /* Change to your desired color */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.see-all-button:hover {
+    background-color: #0056b3;
+    /* Darker shade for hover effect */
+}
+
+/* Popup Modal Styles */
+.popup-modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Semi-transparent background */
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-content {
+    background-color: #fff;
+    padding: 20px;
+    width: 80%;
+    max-width: 500px;
+    text-align: center;
+    border-radius: 8px;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.popup-content img {
+    width: 100%;
+    height: auto;
+    margin: 15px 0;
+}
+
+
+.trailers {
+    margin: 40px 0;
+    /* Space above and below the section */
+}
+
+.trailer-cards {
+    display: flex;
+    flex-wrap: wrap;
+    /* Allows cards to wrap in case of overflow */
+    justify-content: center;
+    /* Center aligns the cards */
+}
+
+.trailer-card {
+    margin: 15px;
+    /* Space between cards */
+    width: 200px;
+    /* Width of the trailer card */
+    border: 1px solid #ccc;
+    /* Card border */
+    border-radius: 5px;
+    /* Rounded corners */
+    overflow: hidden;
+    /* Hides overflow content */
+    text-align: center;
+    /* Center text in card */
+    transition: transform 0.3s;
+    /* Animation on hover */
+}
+
+.trailer-card:hover {
+    transform: scale(1.05);
+    /* Scale effect on hover */
+}
+
+.trailer-card img {
+    width: 100%;
+    /* Make image responsive */
+    height: auto;
+    /* Maintain aspect ratio */
+}
+
+.trailer-info {
+    padding: 10px;
+    /* Space inside the card */
+}
+
+.play-button {
+    padding: 5px 10px;
+    background-color: #007bff;
+    /* Button color */
+    color: white;
+    /* Button text color */
+    border: none;
+    /* Remove border */
+    border-radius: 5px;
+    /* Rounded corners */
+    cursor: pointer;
+    /* Pointer cursor on hover */
+    transition: background-color 0.3s;
+    /* Button color transition */
+}
+
+.play-button:hover {
+    background-color: #0056b3;
+    /* Darker shade for hover */
+}
+
+.now-showing {
+    margin: 40px 0;
+    /* Space above and below the section */
+}
+
+.movie-list {
+    display: flex;
+    flex-wrap: wrap;
+    /* Allow cards to wrap */
+    justify-content: center;
+    /* Center align the cards */
+}
+
+.movie-card {
+    margin: 15px;
+    /* Space between cards */
+    width: 200px;
+    /* Width of the movie card */
+    border: 1px solid #ffff;
+    /* Card border */
+    border-radius: 5px;
+    /* Rounded corners */
+    overflow: hidden;
+    /* Hide overflow content */
+    text-align: center;
+    /* Center text in card */
+    transition: transform 0.3s;
+    /* Animation on hover */
+}
+
+.movie-card:hover {
+    transform: scale(1.05);
+    /* Scale effect on hover */
+}
+
+.movie-card img {
+    width: 100%;
+    /* Make image responsive */
+    height: auto;
+    /* Maintain aspect ratio */
+}
+
+.btn {
+    padding: 10px 15px;
+    /* Button padding */
+    background-color: #007bff;
+    /* Button color */
+    color: white;
+    /* Button text color */
+    border: none;
+    /* Remove border */
+    border-radius: 5px;
+    /* Rounded corners */
+    cursor: pointer;
+    /* Pointer cursor on hover */
+    transition: background-color 0.3s;
+    /* Button color transition */
+    text-decoration: none;
+    /* Remove underline */
+}
+
+.btn:hover {
+    background-color: #0056b3;
+    /* Darker shade for hover */
+}
+
+/* Modal styles */
+.modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1000;
+    /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.8);
+    /* Dark background with opacity */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    /* White background */
+    margin: 15% auto;
+    /* 15% from the top and centered */
+    padding: 30px;
+    border: 2px solid #ff5722;
+    /* Orange border */
+    width: 80%;
+    /* Could be more or less, depending on screen size */
+    text-align: center;
+    border-radius: 15px;
+    /* Rounded corners */
+    max-height: 600px;
+}
+
+.close-button {
+    color: #ff5722;
+    /* Orange color */
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: #d32f2f;
+    /* Darker shade on hover */
+    text-decoration: none;
+    cursor: pointer;
+}
+
+p {
+    color: #333;
+    /* Dark grey for text */
+}
+
+ul {
+    list-style-type: none;
+    /* Remove bullet points */
+    padding: 0;
+    /* Remove padding */
+    color: #555;
+    /* Medium grey for list items */
+}
+
+.image-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    /* Space between the images */
+    margin: 15px 0;
+    /* Margin for top and bottom */
+}
+
+.rounded-image {
+    width: 100px;
+    /* Set width as needed */
+    height: 100px;
+    /* Set height as needed */
+    border-radius: 50%;
+    /* Makes the image round */
+    object-fit: cover;
+    /* Ensures the image covers the circle without distortion */
+    object-position: top;
+    border: 2px solid #ccc;
+    /* Optional: Adds a border for style */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* Transition for smooth animation */
+}
+
+.rounded-image:hover {
+    transform: scale(1.1) rotateY(10deg);
+    /* Scale up and add 3D rotation on hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    /* Add a shadow for depth */
+}
