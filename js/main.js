@@ -1,18 +1,21 @@
-document.getElementById('movie-search').addEventListener('input', function () {
-    const searchValue = this.value.toLowerCase(); // Get the input value in lowercase
-    const movieCards = document.querySelectorAll('.movie-card, .upcoming-card'); // Select all movie cards
+const movieSearch = document.getElementById("movie-search");
 
-    movieCards.forEach(card => {
-        const title = card.getAttribute('data-title').toLowerCase(); // Get the title in lowercase
+if (movieSearch) {
+    movieSearch.addEventListener("input", function () {
+        const searchValue = this.value.toLowerCase();
+        const movieCards = document.querySelectorAll(".movie-card, .upcoming-card");
 
-        // Check if the title includes the search value
-        if (title.includes(searchValue)) {
-            card.style.display = ''; // Show the card if it matches
-        } else {
-            card.style.display = 'none'; // Hide the card if it doesn't match
-        }
+        movieCards.forEach(card => {
+            const title = card.getAttribute("data-title").toLowerCase();
+
+            if (title.includes(searchValue)) {
+                card.style.display = "";
+            } else {
+                card.style.display = "none";
+            }
+        });
     });
-});
+}
 
 document.querySelector('.apply-filter').addEventListener('click', function () {
     const selectedLanguage = document.getElementById('language-select').value.toLowerCase();
@@ -75,36 +78,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // Set interval for auto-scrolling (e.g., every 3 seconds)
     setInterval(showNextItem, 3000); // Adjust time as needed
 });
-
-
-// JavaScript to handle modal display and video source
-const playButtons = document.querySelectorAll('.play-button');
-const videoModal = document.getElementById('videoModal');
-const videoFrame = document.getElementById('videoFrame');
-const closeModal = document.querySelector('.close');
-
-// Function to show modal with the selected video
-playButtons.forEach(button => {
-    button.addEventListener('click', function () {
-        const videoUrl = this.getAttribute('data-video');
-        videoFrame.src = videoUrl; // Set the video URL in the iframe
-        videoModal.style.display = 'block'; // Show the modal
-    });
-});
-
-// Close the modal when the close button is clicked
-closeModal.addEventListener('click', function () {
-    videoModal.style.display = 'none'; // Hide the modal
-    videoFrame.src = ''; // Stop the video
-});
-
-// Close modal when clicking anywhere outside of the modal content
-window.addEventListener('click', function (event) {
-    if (event.target === videoModal) {
-        videoModal.style.display = 'none'; // Hide the modal
-        videoFrame.src = ''; // Stop the video
-    }
-});
 // Get modal element
 var modal = document.getElementById("videoModal");
 // Get video player
@@ -124,7 +97,21 @@ trailerImages.forEach(function (image) {
         modal.style.display = "block"; // Show the modal
     });
 });
+// Add click event listeners to play buttons
+var playButtons = document.querySelectorAll(".play-button");
+playButtons.forEach(function (button) {
+    button.addEventListener("click", function () {
+        var videoPath = this.getAttribute("data-video");
 
+        console.log(videoPath); // Test
+
+        videoSource.src = videoPath;
+        videoPlayer.load();
+        modal.style.display = "block";
+        videoPlayer.play();
+    });
+});
+ 
 // Close the modal when the close button is clicked
 closeButton.onclick = function () {
     modal.style.display = "none";
@@ -189,33 +176,33 @@ function closePopup() {
     document.getElementById('offerPopup').style.display = 'none';
 }
 
-document.getElementById('movie-search').addEventListener('input', function () {
-    const searchValue = this.value.toLowerCase(); // Get the input value in lowercase
-    const movieCards = document.querySelectorAll('.movie-card, .upcoming-card'); // Select all movie cards
+ const movieSearch2 = document.getElementById("movie-search");
 
-    let hasResults = false; // Flag to track if any results are found
+if (movieSearch2) {
+    movieSearch2.addEventListener("input", function () {
+        const searchValue = this.value.toLowerCase();
+        const movieCards = document.querySelectorAll(".movie-card, .upcoming-card");
 
-    movieCards.forEach(card => {
-        const title = card.getAttribute('data-title').toLowerCase(); // Get the title in lowercase
+        let hasResults = false;
 
-        // Check if the title includes the search value
-        if (title.includes(searchValue)) {
-            card.style.display = ''; // Show the card if it matches
-            hasResults = true; // Set flag to true if a match is found
-        } else {
-            card.style.display = 'none'; // Hide the card if it doesn't match
+        movieCards.forEach(card => {
+            const title = card.getAttribute("data-title").toLowerCase();
+
+            if (title.includes(searchValue)) {
+                card.style.display = "";
+                hasResults = true;
+            } else {
+                card.style.display = "none";
+            }
+        });
+
+        const noResultsModal = document.getElementById("no-results-modal");
+        if (noResultsModal) {
+            noResultsModal.style.display =
+                (!hasResults && searchValue) ? "block" : "none";
         }
     });
-
-    // Handle no results found
-    const noResultsModal = document.getElementById('no-results-modal');
-    if (!hasResults && searchValue) {
-        noResultsModal.style.display = 'block'; // Show no results modal
-    } else {
-        noResultsModal.style.display = 'none'; // Hide no results modal
-    }
-});
-
+}
 // Close the modal when the user clicks on <span> (x)
 document.querySelector('.close-button').addEventListener('click', function () {
     document.getElementById('no-results-modal').style.display = 'none';

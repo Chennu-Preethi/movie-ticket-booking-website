@@ -1,0 +1,121 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#f4f4f4;
+}
+
+header{
+    background:#111;
+    color:white;
+    padding:20px 60px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin-left:20px;
+}
+
+nav .active,
+nav a:hover{
+    color:#ffc107;
+}
+
+.banner{
+    background:#222;
+    color:white;
+    text-align:center;
+    padding:50px;
+}
+
+.banner h2{
+    margin-bottom:20px;
+}
+
+.banner input{
+    width:320px;
+    padding:12px;
+    border:none;
+    border-radius:5px;
+}
+
+.theater-container{
+    width:90%;
+    margin:40px auto;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:25px;
+}
+
+.theater-card{
+    background:white;
+    padding:25px;
+    border-radius:10px;
+    box-shadow:0 0 10px rgba(0,0,0,.1);
+}
+
+.theater-card h2{
+    margin-bottom:15px;
+    color:#222;
+}
+
+.theater-card p{
+    margin:10px 0;
+}
+
+.timings button{
+    margin:5px;
+    padding:8px 15px;
+    border:none;
+    background:#444;
+    color:white;
+    border-radius:5px;
+}
+
+.book-btn{
+    width:100%;
+    margin-top:20px;
+    padding:12px;
+    background:#ff9800;
+    color:white;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+    font-size:16px;
+}
+
+.book-btn:hover{
+    background:#e68900;
+}
+
+footer{
+    background:#111;
+    color:white;
+    text-align:center;
+    padding:20px;
+    margin-top:40px;
+}
+
+@media(max-width:768px){
+
+header{
+    flex-direction:column;
+}
+
+nav{
+    margin-top:15px;
+}
+
+.banner input{
+    width:100%;
+}
+
+}

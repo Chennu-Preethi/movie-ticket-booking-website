@@ -18,31 +18,28 @@
     <!-- Header -->
     <header>
         <div class="logo">
-            <img src="C:\Users\chenn\OneDrive\รูปภาพ\Screenshots\Screenshot 2024-11-02 150853.png" alt="Movie Ticket Booking Logo" />
+            <img src="images/logo.jpeg" alt="Movie Ticket Booking Logo">
         </div>
         <nav>
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="movies.html">Movies</a></li>
-                <li><a href="booking.html">Booking</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="profile.html">Profile</a></li>
-                <li><a href="login.html">Login</a></li>
-            </ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="movies.html">Movies</a></li>
+    <li><a href="booking.html">Booking</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="profile.html">Profile</a></li>
+    <li><a href="login.html">Login</a></li>
+</ul>
         </nav>
-
-        <!-- Search Bar -->
-        <div class="search-container">
-            <input type="text" id="movie-search" placeholder="Search for a movie...">
-        </div>
+  
     </header>
+ 
 
     <!-- Main Banner -->
     <section class="banner">
         <div class="carousel">
             <div class="carousel-item">
                 <img src="images/movie1.jpg" alt="Movie Title 1">
-                <button class="play-button" data-video="videos/pushpa2_trailer">▶</button>
+            <button class="play-button" data-video="videos/pushpa2_trailer.mp4">▶</button>
             </div>
             <div class="carousel-item">
                 <img src="images/movie2.jpg" alt="Movie Title 2">
@@ -61,12 +58,7 @@
     </section>
 
     <!-- Modal for Video -->
-    <div id="videoModal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <iframe id="videoFrame" width="560" height="315" src="" frameborder="0" allowfullscreen></iframe>
-        </div>
-    </div>
+    
 
 
 
@@ -238,8 +230,10 @@
         <div class="trailer-container" id="trailerContainer">
             <div class="trailer-item">
                 <div class="card">
-                    <img src="images/movie1.jpg" alt="Movie Title 1" class="trailer-image"
-                        data-video="C:\Projects\movie-ticket-booking-website\videos\pushpa2_trailer.mp4">
+                    <img src="images/movie1.jpg"
+                      alt="Movie Title 1"
+                      class="trailer-image"
+                      data-video="videos/pushpa2_trailer.mp4">
                     <div class="trailer-title">Movie Title 1</div>
                 </div>
             </div>

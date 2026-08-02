@@ -1,1 +1,138 @@
-"" 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Movie Ticket Booking</title>
+
+    <link rel="stylesheet" href="css/contact.css">
+
+    <script>
+        function sendMessage(event){
+            event.preventDefault();
+
+            alert("Thank you! Your message has been sent successfully.");
+
+            document.getElementById("contactForm").reset();
+        }
+    </script>
+
+</head>
+<body>
+
+<header>
+    <h1>Movie Ticket Booking</h1>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="movies.html">Movies</a>
+        <a href="booking.html">Booking</a>
+        <a href="contact.html" class="active">Contact</a>
+        <a href="profile.html">Profile</a>
+    </nav>
+</header>
+
+<section class="contact-banner">
+    <h2>Contact Us</h2>
+
+    <p>
+        Have questions about ticket booking, payments or your account?
+        Our support team is always happy to help.
+    </p>
+</section>
+
+<section class="contact-container">
+
+    <div class="contact-info">
+
+        <h2>Get In Touch</h2>
+
+        <p><strong>📍 Address</strong><br>
+        Hyderabad, Telangana, India</p>
+
+        <p><strong>📞 Phone</strong><br>
+        +91 98765 43210</p>
+
+        <p><strong>📧 Email</strong><br>
+        support@movieticketbooking.com</p>
+
+        <p><strong>🕒 Support Hours</strong><br>
+        Monday - Sunday<br>
+        9:00 AM - 11:00 PM</p>
+
+    </div>
+
+
+    <div class="contact-form">
+
+        <h2>Send Message</h2>
+
+        <form id="contactForm" onsubmit="sendMessage(event)">
+
+            <input
+                type="text"
+                placeholder="Your Name"
+                required>
+
+            <input
+                type="email"
+                placeholder="Your Email"
+                required>
+
+            <input
+                type="tel"
+                placeholder="Phone Number"
+                required>
+
+            <input
+                type="text"
+                placeholder="Subject"
+                required>
+
+            <textarea
+                rows="6"
+                placeholder="Write your message..."
+                required></textarea>
+
+            <button type="submit">
+                Send Message
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+
+<section class="faq">
+
+<h2>Frequently Asked Questions</h2>
+
+<div class="question">
+<h3>How can I book movie tickets?</h3>
+<p>Select your movie, choose seats, complete payment, and receive confirmation.</p>
+</div>
+
+<div class="question">
+<h3>Can I cancel my booking?</h3>
+<p>Yes, bookings can be cancelled before the show starts.</p>
+</div>
+
+<div class="question">
+<h3>Which payment methods are accepted?</h3>
+<p>UPI, Credit Card, Debit Card and Net Banking.</p>
+</div>
+
+</section>
+
+<footer>
+
+<p>
+© 2026 Movie Ticket Booking |
+All Rights Reserved
+</p>
+
+</footer>
+
+</body>
+</html>
